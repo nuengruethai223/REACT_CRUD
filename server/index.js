@@ -15,7 +15,7 @@ const db = mysql.createConnection({
 });
 
 app.get("/registering", (req, res) => {
-  db.query("SELECT * FROM registering", (err, result) => {
+  db.query("SELECT * FROM `registering`", (err, result) => {
     if (err) {
       console.log(err);
     } else {
