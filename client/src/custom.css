@@ -1,0 +1,23 @@
+.navcolor{
+    color: #FDFEFE;
+    background-color: #f72b07d3;
+    background-image:linear-gradient(to right, rgba(255,0,0,0), rgb(245, 134, 7));
+}
+
+.fontBrand{
+    color:#FDFEFE;
+    font-size: 40px;
+}
+.fontinBar{
+    color:#FDFEFE;
+    font-size: 15px;
+}
+.fontHead{
+    color:#6e3828d3;
+    font-size: 40px;
+}
+.cardsmall{
+    color:#1b0d07;
+    background-color: #d8b800d3;
+    font-size: 15px;
+}
