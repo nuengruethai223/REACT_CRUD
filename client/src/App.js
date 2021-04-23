@@ -47,6 +47,7 @@ function App() {
         </Form>
       </Navbar>
       <div>
+       
         <Carousel>
           <Carousel.Item interval={1000}>
             <img
@@ -91,6 +92,7 @@ function App() {
           </Carousel.Item>
         </Carousel>
         <card>
+          <br />
           <Row>
             <Col md="2">
               <Card border="warning" style={{ width: "16rem" }}>

@@ -1,5 +1,5 @@
-// import Axios from 'axios'
-// import {usState} from 'react'
+import Axios from "axios";
+import {useState} from 'react'
 import {
   Navbar,
   Nav,
@@ -17,6 +17,30 @@ import "./custom.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const [f_name, setF_name] = useState("");
+  const [l_name, setL_name] = useState("");
+  const [pass, setPass] = useState("");
+  const [c_pass, setC_pass] = useState("");
+  const [email, setEmail] = useState("");
+  const [age, setAge] = useState("");
+  const [country, setCountry] = useState("");
+  const [position, setPosition] = useState("");
+  
+
+  const submitRegistering = () => {
+    Axios.post("http://localhost:3001/registering", {
+      F_name: f_name,
+      L_name: l_name,
+      Position: position,
+      Age: age,
+      Email: email,
+      Country: country,
+      Pass: pass,
+      C_pass: c_pass,
+    }).then(() => {
+      alert("successful insert");
+    });
+  };
   return (
     <div>
       <Navbar className="navcolor">
@@ -88,6 +112,10 @@ function App() {
                     type="text"
                     className="form-control"
                     placeholder="Enter First Name"
+                    name="f_name"
+                    onChange={(e)=>{
+                      setF_name(e.target.value)
+                    }}
                   />
                 </div>
                 <div className="mb-3">
@@ -98,6 +126,10 @@ function App() {
                     type="text"
                     className="form-control"
                     placeholder="Enter Last Name"
+                    name="l_name"
+                    onChange={(e)=>{
+                      setL_name(e.target.value)
+                    }}
                   />
                 </div>
                 <div className="mb-3">
@@ -108,6 +140,11 @@ function App() {
                     type="text"
                     className="form-control"
                     placeholder="Enter email"
+                    name="email"
+                    onChange={(e)=>{
+                      setEmail(e.target.value)
+                    }
+                  }
                   />
                 </div>
                 <div className="mb-3">
@@ -118,6 +155,11 @@ function App() {
                     type="text"
                     className="form-control"
                     placeholder="Enter position"
+                    name="position"
+                    onChange={(e)=>{
+                      setPosition(e.target.value)
+                    }
+                  }
                   />
                 </div>
                 <div className="mb-3">
@@ -128,6 +170,11 @@ function App() {
                     type="number"
                     className="form-control"
                     placeholder="Enter Age"
+                    name="age"
+                    onChange={(e)=>{
+                      setAge(e.target.value)
+                    }
+                  }
                   />
                 </div>
                 <div className="mb-3">
@@ -138,6 +185,10 @@ function App() {
                     type="text"
                     className="form-control"
                     placeholder="Enter country"
+                    name="country"
+                    onChange={(e)=>{
+                      setCountry(e.target.value)
+                    }}
                   />
                 </div>
                 <div className="mb-3">
@@ -148,6 +199,11 @@ function App() {
                     type="text"
                     className="form-control"
                     placeholder="Enter password"
+                    name="pass"
+                    onChange={(e)=>{
+                      setPass(e.target.value)
+                    }
+                  }
                   />
                 </div>
                 <div className="mb-3">
@@ -158,25 +214,17 @@ function App() {
                     type="text"
                     className="form-control"
                     placeholder="Enter password"
+                    name="C_pass"
+                    onChange={(e)=>{
+                      setC_pass(e.target.value)
+                    }
+                  }
                   />
                 </div>
-                <Button variant="outline-info">Save</Button>{" "}
+                <Button variant="success" onClick={submitRegistering}>
+                  Save
+                </Button>{" "}
                 <Button variant="outline-danger">Delete</Button>{" "}
-                {/* {registering.map((val, key) => {
-             return(
-               <div className="register card">
-                 <div className="card-body text-left">
-                   <p className="card-text">Firts Name: {val.f_name}</p>
-                   <p className="card-text">Last Name: {val.l_name}</p>
-                   <p className="card-text">Position: {val.position}</p>
-                   <p className="card-text">Country: {val.country}</p>
-                   <p className="card-text">Age: {val.age}</p>
-                   <p className="card-text">Current salary: {val.c_salary}</p>
-                   <p className="card-text">Expected salary: {val.e_salary}</p>
-                 </div>
-               </div>
-             )
-          })} */}
               </form>
             </div>
           </div>
