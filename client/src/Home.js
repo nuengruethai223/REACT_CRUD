@@ -1,5 +1,5 @@
 import Axios from "axios";
-import {useState} from 'react'
+import { useState } from "react";
 import {
   Navbar,
   Nav,
@@ -8,6 +8,8 @@ import {
   Form,
   Carousel,
   Card,
+  Alert,
+  state,
   Row,
 } from "react-bootstrap";
 import { Navigation } from "react-minimal-side-navigation";
@@ -25,7 +27,6 @@ function App() {
   const [age, setAge] = useState("");
   const [country, setCountry] = useState("");
   const [position, setPosition] = useState("");
-  
 
   const submitRegistering = () => {
     Axios.post("http://localhost:3001/registering", {
@@ -113,8 +114,8 @@ function App() {
                     className="form-control"
                     placeholder="Enter First Name"
                     name="f_name"
-                    onChange={(e)=>{
-                      setF_name(e.target.value)
+                    onChange={(e) => {
+                      setF_name(e.target.value);
                     }}
                   />
                 </div>
@@ -127,8 +128,8 @@ function App() {
                     className="form-control"
                     placeholder="Enter Last Name"
                     name="l_name"
-                    onChange={(e)=>{
-                      setL_name(e.target.value)
+                    onChange={(e) => {
+                      setL_name(e.target.value);
                     }}
                   />
                 </div>
@@ -141,10 +142,9 @@ function App() {
                     className="form-control"
                     placeholder="Enter email"
                     name="email"
-                    onChange={(e)=>{
-                      setEmail(e.target.value)
-                    }
-                  }
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
                   />
                 </div>
                 <div className="mb-3">
@@ -156,10 +156,9 @@ function App() {
                     className="form-control"
                     placeholder="Enter position"
                     name="position"
-                    onChange={(e)=>{
-                      setPosition(e.target.value)
-                    }
-                  }
+                    onChange={(e) => {
+                      setPosition(e.target.value);
+                    }}
                   />
                 </div>
                 <div className="mb-3">
@@ -171,10 +170,9 @@ function App() {
                     className="form-control"
                     placeholder="Enter Age"
                     name="age"
-                    onChange={(e)=>{
-                      setAge(e.target.value)
-                    }
-                  }
+                    onChange={(e) => {
+                      setAge(e.target.value);
+                    }}
                   />
                 </div>
                 <div className="mb-3">
@@ -186,8 +184,8 @@ function App() {
                     className="form-control"
                     placeholder="Enter country"
                     name="country"
-                    onChange={(e)=>{
-                      setCountry(e.target.value)
+                    onChange={(e) => {
+                      setCountry(e.target.value);
                     }}
                   />
                 </div>
@@ -200,10 +198,9 @@ function App() {
                     className="form-control"
                     placeholder="Enter password"
                     name="pass"
-                    onChange={(e)=>{
-                      setPass(e.target.value)
-                    }
-                  }
+                    onChange={(e) => {
+                      setPass(e.target.value);
+                    }}
                   />
                 </div>
                 <div className="mb-3">
@@ -215,16 +212,16 @@ function App() {
                     className="form-control"
                     placeholder="Enter password"
                     name="C_pass"
-                    onChange={(e)=>{
-                      setC_pass(e.target.value)
-                    }
-                  }
+                    onChange={(e) => {
+                      setC_pass(e.target.value);
+                    }}
                   />
                 </div>
                 <Button variant="success" onClick={submitRegistering}>
                   Save
                 </Button>{" "}
                 <Button variant="outline-danger">Delete</Button>{" "}
+                <Alert variant="primary" isOpen={false}>Save success !!!</Alert>
               </form>
             </div>
           </div>
